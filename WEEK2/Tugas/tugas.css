@@ -1,0 +1,41 @@
+
+body{
+    background-color: black;
+    line-height: 1.65;
+    padding-bottom: 1000px;
+}
+.container{
+
+    background-color: #303234;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.sidebar1{
+    order: 1;
+    background-color: lightcyan;
+    padding: 20px;
+    border-radius: 8PX;
+    width: 200px;
+}
+
+.sidebar2{
+    flex: 1;
+    order: 2;
+    background-size: cover;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+.sidebar3{
+    order: 3;
+    background-color: lightcyan;
+    padding: 20px;
+    border-radius: 8PX;
+    width: 200px;
+
+}
