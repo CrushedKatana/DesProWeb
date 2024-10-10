@@ -5,4 +5,7 @@ if (empty($myArray)){
 }else{
     echo "Array terdefinisi dan tidak kosong.";
 }
+echo "<br>";
+
+
 ?>
