@@ -7,5 +7,10 @@ if (empty($myArray)){
 }
 echo "<br>";
 
+if (empty($nonExstedVar)){
+    echo "Variabel tidak terdefinisi dan kosong.";
+} else {
+    echo "Variabel tidak terdefinisi dan kosong.";
+}
 
-?>
+?> 
