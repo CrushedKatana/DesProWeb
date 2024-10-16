@@ -3,6 +3,7 @@
 
 <head>
     <title>Form Input dengan Validasi</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -53,8 +54,18 @@
                 }
 
                 if (!valid) {
-                    event.preventDefault();
-                } 
+                    $.ajax({ url: "proses_validasi.php",
+                        type: "POST", 
+                        data: $(this).serialize(),
+
+                        success: function(response) {
+                            $("#result").html(response); 
+                        },
+                        error: function() {
+                        $("#result").html("Terjad kesalahan saat mengirim data.");
+                       } 
+                    });
+                }
             });
         });
     </script>
