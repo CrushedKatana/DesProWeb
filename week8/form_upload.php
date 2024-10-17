@@ -3,7 +3,7 @@
         <title>File Upload</title>
     </head>
     <body>
-        <form action="upload.php" menthod="POST" enctype="multipart/form-data">
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="myfile">
             <input type="submit" name="submit">
         </form>
