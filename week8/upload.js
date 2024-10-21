@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#upload-form').submit(function(e) {
         e.preventDefault();
 
-        var formData = new FormData($(this)[0]);
+        var formData = new FormData(this);
 
         $.ajax({
             type: "POST",

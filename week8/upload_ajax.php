@@ -5,7 +5,8 @@
         $file_size = $_FILES['file']['size'];
         $file_tmp = $_FILES['file']['tmp_name'];
         $file_type = $_FILES['file']['type'];
-        $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION)); // Perbaiki bagian ini
+
         $extensions = array("jpg", "jpeg", "png", "gif");
 
         if (!in_array($file_ext, $extensions)) {
