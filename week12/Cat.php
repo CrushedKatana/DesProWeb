@@ -1,8 +1,9 @@
 <?php
+require 'Animal.php'; 
     class Cat extends Animal {
         public function meow(){
         
-        echo $this->name."says meow!.<br>";
+        echo $this->name."says meow!<br>";
         } 
     }
     class Dog extends Animal {
