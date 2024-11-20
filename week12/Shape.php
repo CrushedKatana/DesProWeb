@@ -1,9 +1,9 @@
 <?php
-interface Shape{
-    public function calculateArea();
+abstract class Shape{
+    abstract public function calculateArea();
 }
 
-class Circle implements Shape{
+class Circle extends Shape{
     private $radius; 
     public function __construct($radius) {  
         $this->radius = $radius; 
@@ -12,7 +12,7 @@ class Circle implements Shape{
         return pi() * pow($this->radius, 2);
     }
 }
-class Rectangle implements Shape 
+class Rectangle extends Shape 
 { 
     private $width; 
     private $height;
@@ -33,3 +33,6 @@ $rectangle = new Rectangle(4, 6);
 
 printArea($circle); 
 printArea($rectangle);
+
+echo "Area of Circle: ".$circle->calculateArea() . "<br>";
+echo "Area of Rectangle:".$rectangle->calculateArea(), "<br>";

@@ -12,5 +12,4 @@ class Animal {
     public function sleep() {
         echo $this->name."is sleeping.<br>";
     } 
-    
 }
