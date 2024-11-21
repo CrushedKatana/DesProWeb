@@ -6,13 +6,32 @@
     </head>
     <body>
         <?php
-        include('koneksi.php');
+            include('koneksi.php');
+            
+            if (!isset($_GET['id']) || empty($_GET['id'])) {
+                echo "ID tidak valid.";
+                exit();
+            }
+            
             $id = $_GET['id'];
-            $query = "SELECT * FROM anggota WHERE id = '$id'";
-            $result = mysqli_query($koneksi, $query);
-            $row = mysqli_fetch_assoc($result);
-            mysqli_close($koneksi);
-        ?>
+
+            $query = "SELECT * FROM anggota WHERE id = ?";
+            $params = array($id);
+            $stmt = sqlsrv_query($conn, $query, $params);
+
+            if ($stmt === false) {
+                echo "Error: " . print_r(sqlsrv_errors(), true);
+                exit();
+            }
+
+            $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+
+            if (!$row) {
+                echo "Data tidak ditemukan.";
+                exit();
+            }
+            sqlsrv_free_stmt($stmt);
+            ?>
         <div class="container">
             <h2>Edit Data Anggota</h2>
 

@@ -1,9 +1,11 @@
 <?php
-    // Koneksi ke database
-    $koneksi = mysqli_connect("localhost", "root", "", "prakwebdb");
+$host = "MSI\MSSQLSERVER4";
+$connInfo = array("Database" => "prakwebdb", "UID" => "", "PWD" => "");
+$conn = sqlsrv_connect($host, $connInfo);
 
-    // Periksa koneksi
-    if (mysqli_connect_errno()) {
-        echo "Koneksi database gagal : " . mysqli_connect_error();
-    }
-?>
+if ($conn) {
+    echo "Koneksi berhasil.<br>";
+}else{
+    echo "Koneksi Gagal";
+    die(print_r(sqlsrv_errors(), true));
+}
